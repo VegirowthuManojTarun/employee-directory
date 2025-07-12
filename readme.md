@@ -58,12 +58,16 @@ employee-directory/
 
 ## Reflection
 
+---
+
 ### Challenges Faced:
+
 Exploring and implemeting the Freemaker for the first time
 Not relying on backend
 Debugging Freemaker syntax in components
 
 ### If Given More Time:
+
 Add backend storage (e.g., MySQL/MongoDB).
 Add image upload + avatar management for employees.
 Implement full authentication (admin/user roles).
