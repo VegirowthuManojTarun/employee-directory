@@ -4,7 +4,7 @@ A dynamic, interactive Employee Directory web application built with **Spring Bo
 
 ---
 
-## 🚀 Setup & Run Instructions
+##  Setup & Run Instructions
 
 ### 🧩 Prerequisites
 - Java 17+
@@ -49,7 +49,9 @@ employee-directory/
 ├── pom.xml
 └── README.md
 
-### Screenshots
+## Screenshots
+
+---
 ![employee card](image.png)
 ![Main page](image-1.png)
 
