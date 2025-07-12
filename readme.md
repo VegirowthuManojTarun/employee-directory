@@ -48,6 +48,7 @@ employee-directory/
 │   └── application.properties
 ├── pom.xml
 └── README.md
+```
 
 ## Screenshots
 
