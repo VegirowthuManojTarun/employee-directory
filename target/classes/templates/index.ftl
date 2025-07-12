@@ -37,6 +37,7 @@
     <div class="card-content">
       <h3 class="employee-name"></h3>
       <p class="employee-role"></p>
+      <p class="employee-email"></p>
       <span class="department-badge"></span>
     </div>
     <div class="card-actions">

@@ -217,6 +217,12 @@
   flex-direction: column;
   gap: var(--spacing-md);
 }
+.employee-email {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  word-break: break-word;
+}
 
 .employee-card:hover {
   transform: translateY(-4px);

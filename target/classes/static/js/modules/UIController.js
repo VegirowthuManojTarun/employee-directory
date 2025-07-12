@@ -93,6 +93,8 @@ export default class UIController {
         ".employee-name"
       ).textContent = `${employee.firstName} ${employee.lastName}`;
       card.querySelector(".employee-role").textContent = employee.role;
+      card.querySelector(".employee-email").textContent = employee.email;
+
       card.querySelector(".department-badge").textContent = employee.department;
 
       this.grid.appendChild(clone);
