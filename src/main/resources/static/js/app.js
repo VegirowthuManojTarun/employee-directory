@@ -16,6 +16,25 @@ class App {
   async initialize() {
     await this.dataManager.fetchEmployees();
     await this.uiController.renderEmployees();
+    this.setupFilterToggle(); // ✅ Call it here
+  }
+
+  setupFilterToggle() {
+    const filterToggleBtn = document.getElementById("filterToggle");
+    const filterSidebar = document.getElementById("filterSidebar");
+    const closeFilterBtn = document.getElementById("closeFilter");
+
+    if (filterToggleBtn && filterSidebar) {
+      filterToggleBtn.addEventListener("click", () => {
+        filterSidebar.classList.toggle("open");
+      });
+    }
+
+    if (closeFilterBtn) {
+      closeFilterBtn.addEventListener("click", () => {
+        filterSidebar.classList.remove("open");
+      });
+    }
   }
 }
 

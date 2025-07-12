@@ -43,17 +43,6 @@ export default class FilterManager {
     searchWrapper.className = "search-wrapper";
     this.searchInput.parentNode.insertBefore(searchWrapper, this.searchInput);
     searchWrapper.appendChild(this.searchInput);
-
-    const suggestionsList = document.createElement("ul");
-    suggestionsList.className = "suggestions-list";
-    searchWrapper.appendChild(suggestionsList);
-
-    this.searchInput.addEventListener(
-      "input",
-      debounce(() => {
-        this.updateSuggestions();
-      }, 300)
-    );
   }
 
   applyFilters() {

@@ -24,17 +24,28 @@
     </div>
 
     <!-- JS Template for Employee Card -->
-    <template id="employeeCardTemplate">
-        <div class="employee-card" data-id="">
-            <h3 class="employee-name"></h3>
-            <p class="employee-role"></p>
-            <div class="department-badge"></div>
-            <div class="card-actions">
-                <button data-action="edit" class="btn-sm">Edit</button>
-                <button data-action="delete" class="btn-sm btn-danger">Delete</button>
-            </div>
-        </div>
-    </template>
+   <template id="employeeCardTemplate">
+  <div class="employee-card">
+    <div class="card-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+    </div>
+    <div class="card-content">
+      <h3 class="employee-name"></h3>
+      <p class="employee-role"></p>
+      <span class="department-badge"></span>
+    </div>
+    <div class="card-actions">
+      <button data-action="edit" class="btn-sm">Edit</button>
+      <button data-action="delete" class="btn-sm btn-danger">Delete</button>
+    </div>
+  </div>
+</template>
+
 
     <script type="module" src="/js/app.js"></script>
 </body>

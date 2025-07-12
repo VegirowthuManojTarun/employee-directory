@@ -56,11 +56,11 @@ export default class UIController {
       await this.renderEmployees();
     });
   }
-
-  async renderEmployees() {
-    const employees = await this.dataManager.fetchEmployees();
+  async renderEmployees(employees = null) {
+    if (!employees) {
+      employees = await this.dataManager.fetchEmployees();
+    }
     const template = document.getElementById("employeeCardTemplate");
-
     this.grid.innerHTML = "";
 
     employees.forEach((employee) => {
