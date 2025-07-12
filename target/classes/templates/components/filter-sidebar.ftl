@@ -22,6 +22,14 @@
                    placeholder="Filter by first name">
         </div>
         <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" 
+                    class="form-input" 
+                    id="filterLastName" 
+                    placeholder="Filter by last name">
+        </div>
+
+        <div class="form-group">
             <label class="form-label">Department</label>
             <div class="select-wrapper">
                 <select class="form-select" id="filterDepartment">
@@ -29,6 +37,7 @@
                     <option value="HR">HR</option>
                     <option value="IT">IT</option>
                     <option value="Finance">Finance</option>
+                    <option value="other">Other</option>
                 </select>
                 <svg class="select-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M6 9l6 6 6-6"/>
@@ -43,6 +52,7 @@
                     <option value="Manager">Manager</option>
                     <option value="Developer">Developer</option>
                     <option value="Analyst">Analyst</option>
+                    <option value="other">Other</option>
                 </select>
                 <svg class="select-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M6 9l6 6 6-6"/>

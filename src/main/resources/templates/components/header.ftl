@@ -16,6 +16,7 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
         </div>
+        <div class="add-button-wrapper">
         <button class="btn btn-primary" id="addEmployeeBtn">
             <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -23,5 +24,6 @@
             </svg>
             Add Employee
         </button>
+        </div>
     </div>
 </header>

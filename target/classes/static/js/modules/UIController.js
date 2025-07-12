@@ -41,8 +41,29 @@ export default class UIController {
     });
 
     // Save (Add or Edit)
-    this.saveButton.addEventListener("click", async (e) => {
+    // this.saveButton.addEventListener("click", async (e) => {
+    //   e.preventDefault();
+    //   const formData = new FormData(this.modalForm);
+    //   const employee = Object.fromEntries(formData.entries());
+
+    //   if (this.editingEmployeeId) {
+    //     await this.dataManager.updateEmployee(this.editingEmployeeId, employee);
+    //   } else {
+    //     await this.dataManager.addEmployee(employee);
+    //   }
+
+    //   this.modal.style.display = "none";
+    //   await this.renderEmployees();
+    // });
+    this.modalForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      // Check native HTML5 validity
+      if (!this.modalForm.checkValidity()) {
+        this.modalForm.reportValidity(); // Show built-in browser validation
+        return;
+      }
+
       const formData = new FormData(this.modalForm);
       const employee = Object.fromEntries(formData.entries());
 
@@ -103,6 +124,14 @@ export default class UIController {
 
   initModal() {
     const closeBtn = this.modal.querySelector(".modal-close");
+    const cancelBtn = document.getElementById("cancelModalBtn");
+    if (cancelBtn) {
+      cancelBtn.addEventListener("click", () => {
+        this.modalForm.reset();
+        this.modal.style.display = "none";
+      });
+    }
+
     closeBtn.addEventListener("click", () => {
       this.modal.style.display = "none";
     });

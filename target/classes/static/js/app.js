@@ -16,6 +16,7 @@ class App {
   async initialize() {
     await this.dataManager.fetchEmployees();
     await this.uiController.renderEmployees();
+    this.filterManager.applyControls();
     this.setupFilterToggle(); // ✅ Call it here
   }
 

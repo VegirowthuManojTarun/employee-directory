@@ -30,13 +30,9 @@
                 <label class="form-label">Role</label>
                 <input type="text" name="role" class="form-input" required>
             </div>
-            <div class="form-group">
-                <label class="form-label">Avatar URL</label>
-                <input type="text" name="avatar" class="form-input" placeholder="Optional">
-            </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary" id="saveEmployee">Save</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelModalBtn">Cancel</button>
             </div>
         </form>
     </div>

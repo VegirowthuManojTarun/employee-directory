@@ -15,26 +15,26 @@ export default class FilterManager {
     this.resetBtn.addEventListener("click", () => this.resetFilters());
 
     this.initializeAutocomplete();
+    this.applyControls();
   }
 
   applyControls() {
     const sortBy = this.sortSelect.value;
     const showLimit = parseInt(this.showSelect.value);
 
-    // Get employees from data
-    let employees = [...this.dataManager.employees]; // shallow copy to avoid modifying original
+    let employees = [...this.dataManager.employees]; // clone original list
 
-    // Sort employees
+    // Apply sorting (if any)
     if (sortBy) {
       employees.sort((a, b) =>
         a[sortBy].toLowerCase().localeCompare(b[sortBy].toLowerCase())
       );
     }
 
-    // Limit number of employees
+    // ✅ Apply limit
     const limitedEmployees = employees.slice(0, showLimit);
 
-    // Re-render UI
+    // Render only the limited list
     this.uiController.renderEmployees(limitedEmployees);
   }
 
@@ -49,17 +49,31 @@ export default class FilterManager {
     const firstNameVal = document
       .getElementById("filterFirstName")
       .value.toLowerCase();
+    const lastNameVal = document
+      .getElementById("filterLastName")
+      .value.toLowerCase();
     const departmentVal = document.getElementById("filterDepartment").value;
     const roleVal = document.getElementById("filterRole").value;
 
+    const knownDepartments = ["HR", "IT", "Finance"];
+    const knownRoles = ["Manager", "Developer", "Analyst"];
     const filtered = this.dataManager.employees.filter((emp) => {
       const matchesFirstName =
         firstNameVal === "" ||
         emp.firstName.toLowerCase().includes(firstNameVal);
+      const matchesLastName =
+        lastNameVal === "" || emp.lastName.toLowerCase().includes(lastNameVal);
       const matchesDepartment =
-        departmentVal === "" || emp.department === departmentVal;
-      const matchesRole = roleVal === "" || emp.role === roleVal;
+        departmentVal === "" ||
+        (departmentVal === "other"
+          ? !knownDepartments.includes(emp.department)
+          : emp.department === departmentVal);
 
+      const matchesRole =
+        roleVal === "" ||
+        (roleVal === "other"
+          ? !knownRoles.includes(emp.role)
+          : emp.role === roleVal);
       return matchesFirstName && matchesDepartment && matchesRole;
     });
 
